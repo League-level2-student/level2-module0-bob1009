@@ -28,13 +28,28 @@ public class _01_RobotRace {
 		// 5. use another for loop to iterate through the array and make each robot move
 		// a random amount less than 50.
 		Random ran = new Random();
+		boolean racerunning=true;
+		while (racerunning==true) {
+			rob[0].setSpeed(500);
+			rob[1].setSpeed(500);
+			rob[3].setSpeed(500);
+			rob[3].setSpeed(500);
+			rob[4].setSpeed(500);
 		for (int i = 0; i < rob.length; i++) {
 			int speed = ran.nextInt(50);
 			rob[i].move(speed);
+			rob[i].turn(5);
+			if (rob[i].getY()==100) {
+				racerunning=false;
+				JOptionPane.showMessageDialog(null,"robot number "+i+" wins!");
+				break;
+			}}
 		}
-		for (int i = 0; i < 15; i++) {
-
-		}
+		
+	}
+	}
+		
+		
 		// 6. use a while loop to repeat step 5 until a robot has reached the top of the
 		// screen.
 
@@ -43,5 +58,5 @@ public class _01_RobotRace {
 		// 8. try different races with different amounts of robots.
 
 		// 9. make the robots race around a circular track.
-	}
-}
+	
+	
